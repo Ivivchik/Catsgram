@@ -83,4 +83,13 @@ public class UserService {
 
         return true;
     }
+
+    public Optional<User> findUserById(Long id) {
+        User user = users.get(id);
+        if (user != null) {
+            return Optional.of(user);
+        } else {
+            return Optional.empty();
+        }
+    }
 }
